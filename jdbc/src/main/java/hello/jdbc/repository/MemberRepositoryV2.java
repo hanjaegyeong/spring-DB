@@ -54,8 +54,7 @@ public class MemberRepositoryV2 {
                 member.setMoney(rs.getInt("money"));
                 return member;
             } else {
-                throw new NoSuchElementException("member not found memberId=" +
-                        memberId);
+                throw new NoSuchElementException("member not found memberId=" + memberId);
             }
         } catch (SQLException e) {
             log.error("db error", e);
@@ -80,8 +79,7 @@ public class MemberRepositoryV2 {
                 member.setMoney(rs.getInt("money"));
                 return member;
             } else {
-                throw new NoSuchElementException("member not found memberId=" +
-                        memberId);
+                throw new NoSuchElementException("member not found memberId=" + memberId);
             }
         } catch (SQLException e) {
             log.error("db error", e);

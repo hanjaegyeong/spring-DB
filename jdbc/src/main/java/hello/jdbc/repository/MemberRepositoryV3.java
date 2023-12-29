@@ -57,8 +57,7 @@ public class MemberRepositoryV3 {
                 member.setMoney(rs.getInt("money"));
                 return member;
             } else {
-                throw new NoSuchElementException("member not found memberId=" +
-                        memberId);
+                throw new NoSuchElementException("member not found memberId=" + memberId);
             }
         } catch (SQLException e) {
             log.error("db error", e);
