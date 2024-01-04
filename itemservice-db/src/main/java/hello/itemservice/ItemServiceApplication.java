@@ -31,16 +31,16 @@ public class ItemServiceApplication {
 		return new TestDataInit(itemRepository);
 	}
 
-	// 임베디드 모드
-	@Bean
-	@Profile("test")
-	public DataSource dataSource() {
-		log.info("메모리 데이터베이스 초기화");
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:mem:db;DB_CLOSE_DELAY=-1");
-		dataSource.setUsername("sa");
-		dataSource.setPassword("");
-		return dataSource;
-	}
+//	// 임베디드 모드 -> 없어도 디폴트로 임베디드DB 사용
+//	@Bean
+//	@Profile("test")
+//	public DataSource dataSource() {
+//		log.info("메모리 데이터베이스 초기화");
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName("org.h2.Driver");
+//		dataSource.setUrl("jdbc:h2:mem:db;DB_CLOSE_DELAY=-1");
+//		dataSource.setUsername("sa");
+//		dataSource.setPassword("");
+//		return dataSource;
+//	}
 }
