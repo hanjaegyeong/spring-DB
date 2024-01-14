@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import jakarta.persistence.EntityManager;
 import java.util.Optional;
 
+import static org.springframework.transaction.annotation.Propagation.REQUIRES_NEW;
+
 @Slf4j
 @Repository
 @RequiredArgsConstructor
@@ -14,7 +16,7 @@ public class MemberRepository {
 
     private final EntityManager em;
 
-    //@Transactional
+    @Transactional(propagation = REQUIRES_NEW)
     public void save(Member member) {
         log.info("member 저장");
         em.persist(member);
